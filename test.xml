@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<visit>
-    <description>Foo</description>
-    <identity>
-        <reference>Ref</reference>
-        <user/>
-        <workType>Work</workType>
-    </identity>
-    <property>
-        <reference>Ref</reference>
-        <type>Type</type>
-    </property>
-</visit>
+<UpdateVisitRequest>
+    <Visit>
+        <Description>Foo</Description>
+        <Identity>
+            <Reference>Ref</Reference>
+            <User/>
+            <WorkType>Work</WorkType>
+        </Identity>
+        <Property>
+            <Name>Name</Name>
+            <Reference>Ref</Reference>
+            <Type>Type</Type>
+        </Property>
+    </Visit>
+</UpdateVisitRequest>
