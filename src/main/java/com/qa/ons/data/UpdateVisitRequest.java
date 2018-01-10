@@ -5,22 +5,26 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name="UpdateVisitRequest")
 public class UpdateVisitRequest {
-    private Visit Visit;
+    private Visit visit;
 
-    public UpdateVisitRequest() {}
+    public UpdateVisitRequest() {
+    	
+    }
 
-    public UpdateVisitRequest(Visit Visit) {
+    public UpdateVisitRequest(Visit visit) {
         this();
-        this.Visit = Visit;
+        this.visit = visit;
     }
 
+    @XmlElement(name="Visit")
     public Visit getVisit() {
-        return Visit;
+        return visit;
     }
 
-    public void setVisit(Visit Visit) {
-        this.Visit = Visit;
+    public void setVisit(Visit visit) {
+        this.visit = visit;
     }
 
 }

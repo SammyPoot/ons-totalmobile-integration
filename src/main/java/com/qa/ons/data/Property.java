@@ -5,12 +5,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name="Property")
 public class Property {
     private String Type;
     private String Reference;
     private String Name;
 
-    public Property() {}
+    public Property() {
+    	
+    }
 
     public Property(String Type, String Reference, String Name) {
         super();
@@ -19,6 +22,7 @@ public class Property {
         this.Name = Name;
     }
 
+    @XmlElement(name="Type")
     public String getType() {
         return Type;
     }
@@ -27,6 +31,7 @@ public class Property {
         this.Type = Type;
     }
 
+    @XmlElement(name="Reference")
     public String getReference() {
         return Reference;
     }
@@ -35,6 +40,7 @@ public class Property {
         this.Reference = Reference;
     }
 
+    @XmlElement(name="Name")
     public String getName() {
         return Name;
     }
