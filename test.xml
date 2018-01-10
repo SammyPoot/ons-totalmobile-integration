@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<visit>
+    <description>Foo</description>
+    <identity>
+        <reference>Ref</reference>
+        <user/>
+        <workType>Work</workType>
+    </identity>
+    <property>
+        <reference>Ref</reference>
+        <type>Type</type>
+    </property>
+</visit>

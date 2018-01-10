@@ -1,5 +1,10 @@
 package com.qa.ons.data;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Visit {
     private Identity Identity;
     private String Description;
@@ -37,4 +42,5 @@ public class Visit {
     public void setProperty(Property val) {
         this.Property = val;
     }
+
 }

@@ -6,41 +6,41 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 public class Property {
-    private String type;
-    private String reference;
-    private String name;
+    private String Type;
+    private String Reference;
+    private String Name;
 
     public Property() {}
 
-    public Property(String type, String reference, String name) {
+    public Property(String Type, String Reference, String Name) {
         super();
-        this.type = type;
-        this.reference = reference;
-        this.name = name;
+        this.Type = Type;
+        this.Reference = Reference;
+        this.Name = Name;
     }
 
     public String getType() {
-        return type;
+        return Type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String Type) {
+        this.Type = Type;
     }
 
     public String getReference() {
-        return reference;
+        return Reference;
     }
 
-    public void setReference(String reference) {
-        this.reference = reference;
+    public void setReference(String Reference) {
+        this.Reference = Reference;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
-    public void setAnswers(String name) {
-        this.name = name;
+    public void setAnswers(String Name) {
+        this.Name = Name;
     }
 
 }

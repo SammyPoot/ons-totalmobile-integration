@@ -6,21 +6,21 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 public class UpdateVisitRequest {
-    private Visit visit;
+    private Visit Visit;
 
     public UpdateVisitRequest() {}
 
-    public UpdateVisitRequest(Visit visit) {
+    public UpdateVisitRequest(Visit Visit) {
         this();
-        this.visit = visit;
+        this.Visit = Visit;
     }
 
-    public String getVisit() {
-        return visit;
+    public Visit getVisit() {
+        return Visit;
     }
 
-    public void setVisit(String visit) {
-        this.visit = visit;
+    public void setVisit(Visit Visit) {
+        this.Visit = Visit;
     }
 
 }
