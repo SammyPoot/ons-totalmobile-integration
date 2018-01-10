@@ -4,43 +4,45 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
 public class Visit {
-    private Identity Identity;
-    private String Description;
-    private Property Property;
+    private Identity identity;
+    private String description;
+    private Property property;
 
     public Visit() {}
 
-    public Visit(Identity Identity, String Description, Property Property) {
+    public Visit(Identity identity, String description, Property property) {
         this();
-        setIdentity(Identity);
-        setDescription(Description);
-        setProperty(Property);
+        setIdentity(identity);
+        setDescription(description);
+        setProperty(property);
     }
 
+    @XmlElement(name="Identity")
     public Identity getIdentity() {
-        return this.Identity;
+        return this.identity;
     }
 
     public void setIdentity(Identity val) {
-        this.Identity = val;
+        this.identity = val;
     }
 
+    @XmlElement(name="Description")
     public String getDescription() {
-        return this.Description;
+        return this.description;
     }
 
     public void setDescription(String val) {
-        this.Description = val;
+        this.description = val;
     }
 
+    @XmlElement(name="Property")
     public Property getProperty() {
-        return this.Property;
+        return this.property;
     }
 
     public void setProperty(Property val) {
-        this.Property = val;
+        this.property = val;
     }
 
 }

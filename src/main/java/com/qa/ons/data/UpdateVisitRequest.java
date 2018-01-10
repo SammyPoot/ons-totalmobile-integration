@@ -9,9 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class UpdateVisitRequest {
     private Visit visit;
 
-    public UpdateVisitRequest() {
-    	
-    }
+    public UpdateVisitRequest() {}
 
     public UpdateVisitRequest(Visit visit) {
         this();

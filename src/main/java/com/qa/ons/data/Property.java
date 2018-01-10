@@ -5,15 +5,12 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="Property")
 public class Property {
     private String Type;
     private String Reference;
     private String Name;
 
-    public Property() {
-    	
-    }
+    public Property() {}
 
     public Property(String Type, String Reference, String Name) {
         super();

@@ -1,43 +1,48 @@
 package com.qa.ons.data;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class Identity {
-    private String WorkType;
-    private User User;
-    private String Reference;
+    private String workType;
+    private User user;
+    private String reference;
 
     public Identity() {}
 
-    public Identity(String WorkType, User User, String Reference) {
+    public Identity(String workType, User user, String reference) {
         this();
-        setWorkType(WorkType);
-        setUser(User);
-        setReference(Reference);
+        setWorkType(workType);
+        setUser(user);
+        setReference(reference);
     }
 
+    @XmlElement(name="WorkType")
     public String getWorkType() {
-        return this.WorkType;
+        return this.workType;
     }
 
     public void setWorkType(String val) {
         if (val.length() > 20) {
             throw new IllegalArgumentException();
         }
-        this.WorkType = val;
+        this.workType = val;
     }
 
+    @XmlElement(name="User")
     public User getUser() {
-        return this.User;
+        return this.user;
     }
 
     public void setUser(User val) {
-        this.User = val;
+        this.user = val;
     }
 
+    @XmlElement(name="Reference")
     public String getReference() {
-        return this.Reference;
+        return this.reference;
     }
 
     public void setReference(String val) {
-        this.Reference = val;
+        this.reference = val;
     }
 }
