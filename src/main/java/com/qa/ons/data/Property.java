@@ -5,49 +5,42 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
 public class Property {
-	
-	private String type;
-	private String reference;
-	private String name;
+    private String type;
+    private String reference;
+    private String name;
 
-	public Property() {
+    public Property() {}
 
-	}
+    public Property(String type, String reference, String name) {
+        super();
+        this.type = type;
+        this.reference = reference;
+        this.name = name;
+    }
 
-	public Property(String type, String reference, String name) {
-		super();
-		this.type = type;
-		this.reference = reference;
-		this.name = name;
-	}
+    public String getType() {
+        return type;
+    }
 
-	@XmlAttribute
-	public String getType() {
-		return type;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public String getReference() {
+        return reference;
+    }
 
-	@XmlElement
-	public String getReference() {
-		return reference;
-	}
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
-	public void setReference(String reference) {
-		this.reference = reference;
-	}
+    public String getName() {
+        return name;
+    }
 
-	@XmlElement
-	public String getName() {
-		return name;
-	}
-
-	public void setAnswers(String name) {
-		this.name = name;
-	}
+    public void setAnswers(String name) {
+        this.name = name;
+    }
 
 }

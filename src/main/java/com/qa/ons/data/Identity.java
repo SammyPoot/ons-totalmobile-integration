@@ -5,6 +5,15 @@ public class Identity {
     private User User;
     private String Reference;
 
+    public Identity() {}
+
+    public Identity(String WorkType, User User, String Reference) {
+        this();
+        setWorkType(WorkType);
+        setUser(User);
+        setReference(Reference);
+    }
+
     public String getWorkType() {
         return this.WorkType;
     }

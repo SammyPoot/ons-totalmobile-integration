@@ -5,6 +5,15 @@ public class Visit {
     private String Description;
     private Property Property;
 
+    public Visit() {}
+
+    public Visit(Identity Identity, String Description, Property Property) {
+        this();
+        setIdentity(Identity);
+        setDescription(Description);
+        setProperty(Property);
+    }
+
     public Identity getIdentity() {
         return this.Identity;
     }
