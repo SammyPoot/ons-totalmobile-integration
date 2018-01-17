@@ -6,44 +6,54 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 public class Property {
-    private String Type;
-    private String Reference;
-    private String Name;
+    private String type;
+    private String reference;
+    private String name;
+    private Address address;
 
     public Property() {}
 
-    public Property(String Type, String Reference, String Name) {
+    public Property(String type, String reference, String name, Address address) {
         super();
-        this.Type = Type;
-        this.Reference = Reference;
-        this.Name = Name;
+        this.type = type;
+        this.reference = reference;
+        this.name = name;
+        this.address = address;
     }
 
     @XmlElement(name="Type")
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String Type) {
-        this.Type = Type;
+        this.type = Type;
     }
 
     @XmlElement(name="Reference")
     public String getReference() {
-        return Reference;
+        return reference;
     }
 
     public void setReference(String Reference) {
-        this.Reference = Reference;
+        this.reference = reference;
     }
 
     @XmlElement(name="Name")
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setAnswers(String Name) {
-        this.Name = Name;
+    public void setName(String Name) {
+        this.name = name;
+    }
+    
+    @XmlElement(name="Address")
+    public Address getAddress() {
+        return address;
     }
 
+    public void setAddress(String Name) {
+        this.address = address;
+    }
 }
