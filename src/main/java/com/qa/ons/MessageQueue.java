@@ -48,7 +48,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TransformAndSendRequest")
     @ResponsePayload
     public TransformAndSendResponse transformAndSendMessageRequest(@RequestPayload TransformAndSendRequest request) {
@@ -56,7 +55,6 @@ public class MessageQueue {
         TransformAndSendResponse response = new TransformAndSendResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "QueryMessageRequest")
     @ResponsePayload
@@ -66,7 +64,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetMessageRequest")
     @ResponsePayload
     public GetMessageResponse getMessageRequest(@RequestPayload GetMessageRequest request) {
@@ -74,7 +71,6 @@ public class MessageQueue {
         GetMessageResponse response = new GetMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteMessageRequest")
     @ResponsePayload
@@ -84,7 +80,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "RetryMessageRequest")
     @ResponsePayload
     public RetryMessageResponse retryMessageRequest(@RequestPayload RetryMessageRequest request) {
@@ -92,7 +87,6 @@ public class MessageQueue {
         RetryMessageResponse response = new RetryMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "ResetMessageRequest")
     @ResponsePayload
@@ -102,7 +96,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreateVisitRequestMessage")
     @ResponsePayload
     public SendCreateVisitRequestMessageResponse sendCreateVisitRequestMessage(@RequestPayload SendCreateVisitRequestMessage request) {
@@ -110,7 +103,6 @@ public class MessageQueue {
         SendCreateVisitRequestMessageResponse response = new SendCreateVisitRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendForceRecallVisitRequestMessage")
     @ResponsePayload
@@ -120,7 +112,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendAddVisitTasksRequestMessage")
     @ResponsePayload
     public SendAddVisitTasksRequestMessageResponse sendAddVisitTasksRequestMessage(@RequestPayload SendAddVisitTasksRequestMessage request) {
@@ -129,7 +120,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendUpdateVisitScheduleRequestMessage")
     @ResponsePayload
     public SendUpdateVisitScheduleRequestMessageResponse sendUpdateVisitScheduleRequestMessage(@RequestPayload SendUpdateVisitScheduleRequestMessage request) {
@@ -137,7 +127,6 @@ public class MessageQueue {
         SendUpdateVisitScheduleRequestMessageResponse response = new SendUpdateVisitScheduleRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendUpdateVisitHeaderRequestMessage")
     @ResponsePayload
@@ -148,7 +137,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreateBulletinRequestMessage")
     @ResponsePayload
     public SendCreateBulletinRequestMessageResponse sendCreateBulletinRequestMessage(@RequestPayload SendCreateBulletinRequestMessage request) {
@@ -156,7 +144,6 @@ public class MessageQueue {
         SendCreateBulletinRequestMessageResponse response = new SendCreateBulletinRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendDeleteBulletinRequestMessage")
     @ResponsePayload
@@ -166,7 +153,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendGenerateFolioContentRequestMessage")
     @ResponsePayload
     public SendGenerateFolioContentRequestMessageResponse sendGenerateFolioContentRequestMessage(@RequestPayload SendGenerateFolioContentRequestMessage request) {
@@ -174,7 +160,6 @@ public class MessageQueue {
         SendGenerateFolioContentRequestMessageResponse response = new SendGenerateFolioContentRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendAddFolioContentRequestMessage")
     @ResponsePayload
@@ -184,7 +169,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreateReferralRequestMessage")
     @ResponsePayload
     public SendCreateReferralRequestMessageResponse sendCreateReferralRequestMessage(@RequestPayload SendCreateReferralRequestMessage request) {
@@ -192,7 +176,6 @@ public class MessageQueue {
         SendCreateReferralRequestMessageResponse response = new SendCreateReferralRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreatePatientRequestMessage")
     @ResponsePayload
@@ -202,7 +185,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendUpdateReferralRequestMessage")
     @ResponsePayload
     public SendUpdateReferralRequestMessageResponse sendUpdateReferralRequestMessage(@RequestPayload SendUpdateReferralRequestMessage request) {
@@ -210,7 +192,6 @@ public class MessageQueue {
         SendUpdateReferralRequestMessageResponse response = new SendUpdateReferralRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreateAppointmentRequestMessage")
     @ResponsePayload
@@ -220,7 +201,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendDischargeReferralRequestMessage")
     @ResponsePayload
     public SendDischargeReferralRequestMessageResponse sendDischargeReferralRequestMessage(@RequestPayload SendDischargeReferralRequestMessage request) {
@@ -228,7 +208,6 @@ public class MessageQueue {
         SendDischargeReferralRequestMessageResponse response = new SendDischargeReferralRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreateJobRequestMessage")
     @ResponsePayload
@@ -238,7 +217,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendDeleteJobRequestMessage")
     @ResponsePayload
     public SendDeleteJobRequestMessageResponse sendDeleteJobRequestMessage(@RequestPayload SendDeleteJobRequestMessage request) {
@@ -246,7 +224,6 @@ public class MessageQueue {
         SendDeleteJobRequestMessageResponse response = new SendDeleteJobRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendAddJobTasksRequestMessage")
     @ResponsePayload
@@ -256,7 +233,6 @@ public class MessageQueue {
         return response;
     }
 
-
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendSaveAvailabilityRequestMessage")
     @ResponsePayload
     public SendSaveAvailabilityRequestMessageResponse sendSaveAvailabilityRequestMessage(@RequestPayload SendSaveAvailabilityRequestMessage request) {
@@ -264,7 +240,6 @@ public class MessageQueue {
         SendSaveAvailabilityRequestMessageResponse response = new SendSaveAvailabilityRequestMessageResponse();
         return response;
     }
-
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendUpdateJobHeaderRequestMessage")
     @ResponsePayload
