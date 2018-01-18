@@ -1,5 +1,7 @@
 package com.qa.ons;
 
+import javax.xml.bind.JAXBElement;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -42,58 +44,65 @@ public class MessageQueue {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendMessageRequest")
     @ResponsePayload
-    public SendMessageResponse sendMessageRequest(@RequestPayload SendMessageRequest request) {
+    public JAXBElement<SendMessageResponse> sendMessageRequest(@RequestPayload JAXBElement<SendMessageRequest> request) {
         stub("SendMessage");
         SendMessageResponse response = new SendMessageResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createSendMessageResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TransformAndSendRequest")
     @ResponsePayload
-    public TransformAndSendResponse transformAndSendMessageRequest(@RequestPayload TransformAndSendRequest request) {
+    public JAXBElement<TransformAndSendResponse> transformAndSendMessageRequest(@RequestPayload JAXBElement<TransformAndSendRequest> request) {
         stub("TransformAndSendMessage");
         TransformAndSendResponse response = new TransformAndSendResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createTransformAndSendResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "QueryMessageRequest")
     @ResponsePayload
-    public QueryMessagesResponse queryMessageRequest(@RequestPayload QueryMessagesRequest request) {
+    public JAXBElement<QueryMessagesResponse> queryMessageRequest(@RequestPayload JAXBElement<QueryMessagesRequest> request) {
         stub("Query");
         QueryMessagesResponse response = new QueryMessagesResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createQueryMessagesResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetMessageRequest")
     @ResponsePayload
-    public GetMessageResponse getMessageRequest(@RequestPayload GetMessageRequest request) {
+    public JAXBElement<GetMessageResponse> getMessageRequest(@RequestPayload JAXBElement<GetMessageRequest> request) {
         stub("Get");
         GetMessageResponse response = new GetMessageResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createGetMessageResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteMessageRequest")
     @ResponsePayload
-    public DeleteMessageResponse deleteMessageRequest(@RequestPayload DeleteMessageRequest request) {
+    public JAXBElement<DeleteMessageResponse> deleteMessageRequest(@RequestPayload JAXBElement<DeleteMessageRequest> request) {
         stub("Delete");
         DeleteMessageResponse response = new DeleteMessageResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createDeleteMessageResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "RetryMessageRequest")
     @ResponsePayload
-    public RetryMessageResponse retryMessageRequest(@RequestPayload RetryMessageRequest request) {
+    public JAXBElement<RetryMessageResponse> retryMessageRequest(@RequestPayload JAXBElement<RetryMessageRequest> request) {
         stub("Retry");
         RetryMessageResponse response = new RetryMessageResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createRetryMessageResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "ResetMessageRequest")
     @ResponsePayload
-    public ResetMessageResponse resetMessageRequest(@RequestPayload ResetMessageRequest request) {
+    public JAXBElement<ResetMessageResponse> resetMessageRequest(@RequestPayload JAXBElement<ResetMessageRequest> request) {
         stub("Reset");
         ResetMessageResponse response = new ResetMessageResponse();
-        return response;
+        ObjectFactory objectFactory = new ObjectFactory();
+        return objectFactory.createResetMessageResponse(response);
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendCreateVisitRequestMessage")
