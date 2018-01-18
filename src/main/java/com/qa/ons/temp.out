@@ -1,104 +1,63 @@
-package com.qa.ons;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ws.server.endpoint.annotation.Endpoint;
-import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
-import org.springframework.ws.server.endpoint.annotation.RequestPayload;
-import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-
-import com.consiliumtechnologies.schemas.services.mobile._2009._03.messaging.*;
-
-@Endpoint
-public class MessageQueue {
-    private static final String NAMESPACE_URI = "http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging";
-
-    @Autowired
-    public MessageQueue() {
-    }
-
-    public void stub(String messageType) {
-        System.out.println("Found a " + messageType);
-    }
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Foobar")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendMessage")
     @ResponsePayload
-    public String test(@RequestPayload String request) {
-        String response = new String("Foobar");
-        // response.setCountry(countryRepository.findCountry(request.getName()));
-
-        return response;
-    }
-
-    // generated with:
-    // awk '{print "
-    //     @PayloadRoot(namespace = NAMESPACE_URI, localPart = \"" $1 "\")
-    //     @ResponsePayload
-    //     public " $1 "Response " tolower(substr($1, 1, 1)) substr($1, 2) "(@RequestPayload " $1 " request) {
-    //         stub(\"" $1 "\");
-    //         " $1 "Response response = new " $1 "Response();
-    //         return response;
-    //     }
-    // "}'
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendMessageRequest")
-    @ResponsePayload
-    public SendMessageResponse sendMessageRequest(@RequestPayload SendMessageRequest request) {
+    public SendMessageResponse sendMessage(@RequestPayload SendMessage request) {
         stub("SendMessage");
         SendMessageResponse response = new SendMessageResponse();
         return response;
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TransformAndSendRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TransformAndSendMessage")
     @ResponsePayload
-    public TransformAndSendResponse transformAndSendMessageRequest(@RequestPayload TransformAndSendRequest request) {
+    public TransformAndSendMessageResponse transformAndSendMessage(@RequestPayload TransformAndSendMessage request) {
         stub("TransformAndSendMessage");
-        TransformAndSendResponse response = new TransformAndSendResponse();
+        TransformAndSendMessageResponse response = new TransformAndSendMessageResponse();
         return response;
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "QueryMessageRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Query")
     @ResponsePayload
-    public QueryMessagesResponse queryMessageRequest(@RequestPayload QueryMessagesRequest request) {
+    public QueryResponse query(@RequestPayload Query request) {
         stub("Query");
-        QueryMessagesResponse response = new QueryMessagesResponse();
+        QueryResponse response = new QueryResponse();
         return response;
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetMessageRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Get")
     @ResponsePayload
-    public GetMessageResponse getMessageRequest(@RequestPayload GetMessageRequest request) {
+    public GetResponse get(@RequestPayload Get request) {
         stub("Get");
-        GetMessageResponse response = new GetMessageResponse();
+        GetResponse response = new GetResponse();
         return response;
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteMessageRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Delete")
     @ResponsePayload
-    public DeleteMessageResponse deleteMessageRequest(@RequestPayload DeleteMessageRequest request) {
+    public DeleteResponse delete(@RequestPayload Delete request) {
         stub("Delete");
-        DeleteMessageResponse response = new DeleteMessageResponse();
+        DeleteResponse response = new DeleteResponse();
         return response;
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "RetryMessageRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Retry")
     @ResponsePayload
-    public RetryMessageResponse retryMessageRequest(@RequestPayload RetryMessageRequest request) {
+    public RetryResponse retry(@RequestPayload Retry request) {
         stub("Retry");
-        RetryMessageResponse response = new RetryMessageResponse();
+        RetryResponse response = new RetryResponse();
         return response;
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "ResetMessageRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Reset")
     @ResponsePayload
-    public ResetMessageResponse resetMessageRequest(@RequestPayload ResetMessageRequest request) {
+    public ResetResponse reset(@RequestPayload Reset request) {
         stub("Reset");
-        ResetMessageResponse response = new ResetMessageResponse();
+        ResetResponse response = new ResetResponse();
         return response;
     }
 
@@ -273,4 +232,3 @@ public class MessageQueue {
         return response;
     }
 
-}
