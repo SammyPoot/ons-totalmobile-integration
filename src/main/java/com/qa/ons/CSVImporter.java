@@ -27,7 +27,7 @@ public class CSVImporter {
 
     public List<UpdateVisitHeaderRequest> ingest(String csvFile) {
     	List<UpdateVisitHeaderRequest> data = new ArrayList<UpdateVisitHeaderRequest>();
-    	ArrayList<String[]> sampleData = operate("test.csv");
+    	ArrayList<String[]> sampleData = operate(csvFile);
 
         for(String[] rowEntry:sampleData) {
             if(rowEntry[0].equals("ADDRESSTYPE")) {
@@ -55,22 +55,6 @@ public class CSVImporter {
 
             contactUpdateType.setAddress(addressUpdateType);
             updateVisitHeaderRequest.setProperty(contactUpdateType);
-
-            try {
-				VisitSubmitter.send(updateVisitHeaderRequest);
-			} catch (JAXBException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SOAPException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParserConfigurationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 
             // // // Document Output
             // TransformerFactory tf = TransformerFactory.newInstance();
