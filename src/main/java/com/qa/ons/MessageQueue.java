@@ -14,7 +14,7 @@ public class MessageQueue {
     private static final String NAMESPACE_URI = "http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging";
 
     @Autowired
-    public MessageQueue1() {
+    public MessageQueue() {
     }
 
     public void stub(String messageType) {
