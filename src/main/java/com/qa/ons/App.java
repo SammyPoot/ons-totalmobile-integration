@@ -55,7 +55,7 @@ public class App {
             contactUpdateType.setAddress(addressUpdateType);
             updateVisitHeaderRequest.setProperty(contactUpdateType);
 
-            Document doc = VisitSubmitter.toDocument(updateVisitHeaderRequest);
+            VisitSubmitter.send(updateVisitHeaderRequest);
 
             // // // Document Output
             // TransformerFactory tf = TransformerFactory.newInstance();
@@ -63,8 +63,6 @@ public class App {
             // DOMSource source = new DOMSource(doc);
             // StreamResult result = new StreamResult(System.out);
             // t.transform(source, result);
-
-            SOAPMessage soap = VisitSubmitter.soapConstruct(doc);
 
             // // // Class Output
             // JAXBContext contextObj = JAXBContext.newInstance(SendUpdateVisitHeaderRequestMessage.class);
