@@ -17,7 +17,7 @@ import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateV
 import org.w3c.dom.Document;
 
 public class VisitSubmitter {
-    private static String url = "http://localhost:8081/mockMessageQueue";
+    private static String url = "http://localhost:8088/mockMessageQueue1";
     private static String action = "MessageQueue";
 
     public static Document toDocument(UpdateVisitHeaderRequest request) throws javax.xml.bind.JAXBException, javax.xml.parsers.ParserConfigurationException {
@@ -46,9 +46,6 @@ public class VisitSubmitter {
 
         SOAPPart soapPart = soapMessage.getSOAPPart();
 
-        // String myNamespace = "myNamespace";
-        // String myNamespaceURI = "http://www.webserviceX.NET";
-
         // SOAP Envelope
         SOAPEnvelope envelope = soapPart.getEnvelope();
         // envelope.addNamespaceDeclaration(myNamespace, myNamespaceURI);
@@ -72,16 +69,20 @@ public class VisitSubmitter {
         return soapMessage;
     }
 
-    private static void soapSend(SOAPMessage message) {
-        String soapEndpointUrl = "http://www.webservicex.net/uszip.asmx";
-        // String soapAction = "http://www.webserviceX.NET/GetInfoByCity";
+    public static SendUpdateVisitHeaderRequestMessageResponse soapResponseUnmarshal(SOAPMessage response) throws javax.xml.bind.JAXBException, javax.xml.soap.SOAPException {
+        Unmarshaller unmarshaller = JAXBContext.newInstance(SendUpdateVisitHeaderRequestMessageResponse.class).createUnmarshaller();
+        SendUpdateVisitHeaderRequestMessageResponse messageResponse = (SendUpdateVisitHeaderRequestMessageResponse) unmarshaller.unmarshal(response.getSOAPBody().extractContentAsDocument());
+        return messageResponse;
+    }
+
+    private static SendUpdateVisitHeaderRequestMessageResponse soapSend(SOAPMessage message) {
         try {
             // Create SOAP Connection
             SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
             SOAPConnection soapConnection = soapConnectionFactory.createConnection();
 
             // Send SOAP Message to SOAP Server
-            SOAPMessage soapResponse = soapConnection.call(message, soapEndpointUrl);
+            SOAPMessage soapResponse = soapConnection.call(message, url);
 
             // Print the SOAP Response
             System.out.println("Response SOAP Message:");
@@ -89,17 +90,24 @@ public class VisitSubmitter {
             System.out.println();
 
             soapConnection.close();
+
+            return soapResponseUnmarshal(soapResponse);
         } catch (Exception e) {
             System.err.println("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
             e.printStackTrace();
+            System.exit(1);
         }
+        return null;
     }
 
     // public static SendMessageResponse sendAll(List<UpdateVisitHeaderRequest> request) {
 
     // }
 
-    // public static SendMessageResponse send(UpdateVisitHeaderRequest request) {
-    //     return 
-    // }
+    public static SendUpdateVisitHeaderRequestMessageResponse send(UpdateVisitHeaderRequest request) throws javax.xml.bind.JAXBException, javax.xml.soap.SOAPException, javax.xml.parsers.ParserConfigurationException, java.io.IOException {
+        Document document = toDocument(request);
+        SOAPMessage soap = soapConstruct(document);
+        SendUpdateVisitHeaderRequestMessageResponse response = soapSend(soap);
+        return response;
+    }
 }
