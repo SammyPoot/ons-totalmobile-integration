@@ -22,12 +22,12 @@ import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateV
 public class CSVImporter {
 
     public CSVImporter() {
-    	
+
     }
 
     public List<UpdateVisitHeaderRequest> ingest(String csvFile) {
-    	List<UpdateVisitHeaderRequest> data = new ArrayList<UpdateVisitHeaderRequest>();
-    	ArrayList<String[]> sampleData = operate(csvFile);
+        List<UpdateVisitHeaderRequest> data = new ArrayList<UpdateVisitHeaderRequest>();
+        ArrayList<String[]> sampleData = operate(csvFile);
 
         for(String[] rowEntry:sampleData) {
             if(rowEntry[0].equals("ADDRESSTYPE")) {
@@ -71,13 +71,13 @@ public class CSVImporter {
             // marshallerObj.marshal(sendUpdateVisitHeaderRequest, stringWriter);
 
             // System.out.println(stringWriter.toString());
-            
+
             data.add(updateVisitHeaderRequest);
         }
-		return data;
+        return data;
     }
-    
-    public ArrayList<String[]> operate(String csvFile) {
+
+    private ArrayList<String[]> operate(String csvFile) {
         File file = new File(csvFile);
         BufferedReader bufferedReader = null;
         String line = "";
@@ -89,14 +89,17 @@ public class CSVImporter {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            // TODO better error handling
         } catch (IOException e) {
             e.printStackTrace();
+            // TODO better error handling
         } finally {
             if (bufferedReader != null) {
                 try {
                     bufferedReader.close();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    // TODO better error handling
                 }
             }
         }
