@@ -20,10 +20,14 @@ import com.consiliumtechnologies.schemas.mobile._2009._03.commontypes.ContactUpd
 import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateVisitHeaderRequest;
 import com.consiliumtechnologies.schemas.mobile._2009._03.commontypes.ObjectFactory;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.w3c.dom.Document;
 
+@SpringBootApplication
 public class App {
-    public static void main(String[] args) throws JAXBException, javax.xml.parsers.ParserConfigurationException, javax.xml.transform.TransformerConfigurationException, javax.xml.transform.TransformerException, javax.xml.soap.SOAPException, java.io.IOException {
+    public static void test(String[] args) throws JAXBException, javax.xml.parsers.ParserConfigurationException, javax.xml.transform.TransformerConfigurationException, javax.xml.transform.TransformerException, javax.xml.soap.SOAPException, java.io.IOException {
         CSVImporter csvImporter = new CSVImporter();
 
         ArrayList<String[]> sampleData = csvImporter.ingest("test.csv");
@@ -73,5 +77,9 @@ public class App {
 
             // System.out.println(stringWriter.toString());
         }
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
     }
 }
