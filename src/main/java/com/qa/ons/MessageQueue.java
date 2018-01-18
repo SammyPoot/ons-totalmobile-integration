@@ -33,7 +33,10 @@ public class MessageQueue {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SendUpdateVisitHeaderRequestMessage")
     @ResponsePayload
     public SendUpdateVisitHeaderRequestMessageResponse sendUpdateVisitHeaderRequestMessage(@RequestPayload SendUpdateVisitHeaderRequestMessage request) {
-        SendUpdateVisitHeaderRequestMessageResponse response = null;
+       	
+    	System.out.println("SOAP Object Recieved: " + request.getUpdateVisitHeaderRequest().getProperty().getAddress().getPostCode());
+    	
+    	SendUpdateVisitHeaderRequestMessageResponse response = new SendUpdateVisitHeaderRequestMessageResponse();
         return response;
     }
 }
