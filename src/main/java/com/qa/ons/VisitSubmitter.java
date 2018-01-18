@@ -17,7 +17,7 @@ import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateV
 import org.w3c.dom.Document;
 
 public class VisitSubmitter {
-    private static String url = "http://localhost:8088/mockMessageQueue1";
+    private static String url = "http://localhost:9090/live/Services/taskmobileserver/v20/messaging/messagequeuews.asmx";
     private static String action = "MessageQueue";
 
     public static Document toDocument(UpdateVisitHeaderRequest request) throws javax.xml.bind.JAXBException, javax.xml.parsers.ParserConfigurationException {

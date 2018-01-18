@@ -143,6 +143,7 @@ public class MessageQueue {
     @ResponsePayload
     public SendUpdateVisitHeaderRequestMessageResponse sendUpdateVisitHeaderRequestMessage(@RequestPayload SendUpdateVisitHeaderRequestMessage request) {
         stub("SendUpdateVisitHeaderRequestMessage");
+        // System.out.println("SOAP Object Recieved: " + request.getUpdateVisitHeaderRequest().getProperty().getAddress().getPostCode());
         SendUpdateVisitHeaderRequestMessageResponse response = new SendUpdateVisitHeaderRequestMessageResponse();
         return response;
     }
