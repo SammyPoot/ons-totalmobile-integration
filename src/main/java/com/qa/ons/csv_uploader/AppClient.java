@@ -1,4 +1,4 @@
-package com.qa.ons;
+package com.qa.ons.csv_uploader;
 
 import java.io.IOException;
 import java.util.List;
