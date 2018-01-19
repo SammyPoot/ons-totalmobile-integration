@@ -1,4 +1,4 @@
-package com.qa.ons;
+package com.qa.ons.csv_uploader;
 
 import javax.xml.bind.*;
 import javax.xml.parsers.*;

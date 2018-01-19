@@ -1,4 +1,4 @@
-package com.qa.ons;
+package com.qa.ons.csv_uploader;
 
 import java.io.BufferedReader;
 import java.io.File;

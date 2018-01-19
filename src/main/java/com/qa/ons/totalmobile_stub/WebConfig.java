@@ -1,4 +1,4 @@
-package com.qa.ons;
+package com.qa.ons.totalmobile_stub;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;

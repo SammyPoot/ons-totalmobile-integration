@@ -1,4 +1,4 @@
-package com.qa.ons;
+package com.qa.ons.totalmobile_stub;
 
 import javax.xml.bind.JAXBElement;
 
