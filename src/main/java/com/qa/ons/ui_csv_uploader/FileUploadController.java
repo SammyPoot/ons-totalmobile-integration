@@ -35,9 +35,9 @@ public class FileUploadController {
     public String listUploadedFiles(Model model) throws IOException {
 
         model.addAttribute("files", storageService.loadAll().map(
-                path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
-                        "serveFile", path.getFileName().toString()).build().toString())
-                .collect(Collectors.toList()));
+                                                                 path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
+                                                                                                                "serveFile", path.getFileName().toString()).build().toString())
+                           .collect(Collectors.toList()));
 
         return "uploadForm";
     }
@@ -48,17 +48,17 @@ public class FileUploadController {
 
         Resource file = storageService.loadAsResource(filename);
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
-                "attachment; filename=\"" + file.getFilename() + "\"").body(file);
+                                          "attachment; filename=\"" + file.getFilename() + "\"").body(file);
     }
 
     @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
-            RedirectAttributes redirectAttributes) {
-    	
+                                   RedirectAttributes redirectAttributes) {
+
         storageService.store(file);
         redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded " + file.getOriginalFilename() + "!");
-        
+                                             "You successfully uploaded " + file.getOriginalFilename() + "!");
+
         AppClient appClient = new AppClient();
         appClient.run("/Users/JamesBerry/git/ons-totalmobile-integration/upload-dir/"+file.getOriginalFilename());
 
