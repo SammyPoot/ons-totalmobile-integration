@@ -11,8 +11,13 @@ import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateV
 
 public class AppClient {
 	public static void main(String[] args) throws JAXBException, javax.xml.parsers.ParserConfigurationException, javax.xml.transform.TransformerConfigurationException, javax.xml.transform.TransformerException, javax.xml.soap.SOAPException, java.io.IOException {
-        CSVImporter csvImporter = new CSVImporter();
-        List<UpdateVisitHeaderRequest> visitHeaderRequests = csvImporter.ingest(args[0]);
+        AppClient appClient = new AppClient();
+        appClient.run(args[0]);
+    }
+	
+	public void run(String arg) {
+		CSVImporter csvImporter = new CSVImporter();
+        List<UpdateVisitHeaderRequest> visitHeaderRequests = csvImporter.ingest(arg);
         for(UpdateVisitHeaderRequest visit: visitHeaderRequests) {
         	try {
 				VisitSubmitter.send(visit);
@@ -26,5 +31,5 @@ public class AppClient {
 				e.printStackTrace();
 			}
         }
-    }
+	}
 }
