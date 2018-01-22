@@ -30,7 +30,7 @@ public class CSVImporter {
         ArrayList<String[]> sampleData = operate(csvFile);
 
         for(String[] rowEntry:sampleData) {
-            if(rowEntry[0].equals("ADDRESSTYPE")) {
+            if(rowEntry[0].equals("UPRN")) {
                 continue;
             }
 
@@ -40,16 +40,16 @@ public class CSVImporter {
             AddressUpdateType addressUpdateType = new AddressUpdateType();
             ArrayOfString arrayOfString = new ArrayOfString();
 
-            arrayOfString.getAddressLine().add(rowEntry[4]);
             arrayOfString.getAddressLine().add(rowEntry[5]);
             arrayOfString.getAddressLine().add(rowEntry[6]);
             arrayOfString.getAddressLine().add(rowEntry[7]);
+            arrayOfString.getAddressLine().add(rowEntry[8]);
 
-            JAXBElement<Float> geoX = objectFactory.createAddressTypeGeoX(Float.parseFloat(rowEntry[14]));
-            JAXBElement<Float> geoY = objectFactory.createAddressTypeGeoY(Float.parseFloat(rowEntry[15]));
+            JAXBElement<Float> geoX = objectFactory.createAddressTypeGeoX(Float.parseFloat(rowEntry[15]));
+            JAXBElement<Float> geoY = objectFactory.createAddressTypeGeoY(Float.parseFloat(rowEntry[16]));
 
             addressUpdateType.setLines(arrayOfString);
-            addressUpdateType.setPostCode(rowEntry[8]);
+            addressUpdateType.setPostCode(rowEntry[9]);
             addressUpdateType.setGeoX(geoX);
             addressUpdateType.setGeoY(geoY);
 
