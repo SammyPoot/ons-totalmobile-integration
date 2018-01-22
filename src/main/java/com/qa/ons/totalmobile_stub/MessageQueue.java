@@ -22,15 +22,6 @@ public class MessageQueue {
         System.out.println("Found a " + messageType);
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "Foobar")
-    @ResponsePayload
-    public String test(@RequestPayload String request) {
-        String response = new String("Foobar");
-        // response.setCountry(countryRepository.findCountry(request.getName()));
-
-        return response;
-    }
-
     // generated with:
     // awk '{print "
     //     @PayloadRoot(namespace = NAMESPACE_URI, localPart = \"" $1 "\")
