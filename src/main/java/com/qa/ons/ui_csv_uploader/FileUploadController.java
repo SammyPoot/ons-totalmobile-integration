@@ -60,9 +60,8 @@ public class FileUploadController {
                                              "You successfully uploaded " + file.getOriginalFilename() + "!");
 
         AppClient appClient = new AppClient();
-//        appClient.run(storageService.load(file.getOriginalFilename()).toString());
+        appClient.run(storageService.load(file.getOriginalFilename()).toString());
 //        System.out.println(storageService.load(file.getOriginalFilename()).toString());
-        appClient.run("/Users/JamesBerry/git/ons-totalmobile-integration/upload-dir/"+file.getOriginalFilename());
 
         return "redirect:/";
     }
