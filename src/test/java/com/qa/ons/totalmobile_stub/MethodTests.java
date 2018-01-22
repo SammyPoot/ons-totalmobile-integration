@@ -53,7 +53,7 @@ public class MethodTests {
     public void testSayHelloWorld() throws Exception {
         Source requestPayload = new StringSource("<SendUpdateVisitHeaderRequestMessage xmlns=\"http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging\" xmlns:ns2=\"http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsTypes.xsd\" xmlns:ns3=\"http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd\" xmlns:ns4=\"http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsMessages.xsd\"><UpdateVisitHeaderRequest><ns4:Property><ns3:Address><ns3:Lines><ns3:AddressLine>APARTMENT 3101</ns3:AddressLine><ns3:AddressLine>10 HOLLOWAY CIRCUS QUEENSWAY</ns3:AddressLine><ns3:AddressLine/><ns3:AddressLine>BIRMINGHAM</ns3:AddressLine></ns3:Lines><ns3:PostCode>B1 1BY</ns3:PostCode><ns3:GeoX>52.4754</ns3:GeoX><ns3:GeoY>-1.90021</ns3:GeoY></ns3:Address></ns4:Property></UpdateVisitHeaderRequest></SendUpdateVisitHeaderRequestMessage>");
 
-        Source responsePayload = new StringSource("<ns2:getBeerResponse xmlns:ns2=\"https://memorynotfound.com/beer\"></ns2:getBeerResponse>");
+        Source responsePayload = new StringSource("<ns2:SendUpdateVisitHeaderRequestMessageResponse xmlns:ns2=\"http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging\"/>");
 
         mockClient
             .sendRequest(withPayload(requestPayload))
