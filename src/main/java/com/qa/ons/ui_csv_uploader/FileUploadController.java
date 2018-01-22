@@ -61,7 +61,6 @@ public class FileUploadController {
 
         AppClient appClient = new AppClient();
         appClient.run(storageService.load(file.getOriginalFilename()).toString());
-//        System.out.println(storageService.load(file.getOriginalFilename()).toString());
 
         return "redirect:/";
     }
