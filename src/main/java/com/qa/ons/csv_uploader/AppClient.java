@@ -13,7 +13,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AppClient {
+	
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    
     public static void main(String[] args) {
         AppClient appClient = new AppClient();
         appClient.run(args[0]);
