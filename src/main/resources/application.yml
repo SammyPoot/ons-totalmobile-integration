@@ -3,20 +3,3 @@ server:
 
 client:
   default-uri: http://localhost:9090
-
-
-logging:
-  level:
-    root: WARN
-    org:
-      springframework:
-        security: DEBUG
-        web: ERROR
-      hibernate: DEBUG
-      apache:
-        commons:
-          dbcp2: DEBUG
-    file: target/SpringErrors/springLog.log
-  pattern:
-      console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
-      file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
