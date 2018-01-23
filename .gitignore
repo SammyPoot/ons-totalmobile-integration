@@ -1,3 +1,13 @@
+# ignore common eclipse files
+bin/
+.classpath
+.project
+.settings/
+
+# ignore mac files
+.DS_Store
+
+# ignore common maven files
 target/
 pom.xml.tag
 pom.xml.releaseBackup
