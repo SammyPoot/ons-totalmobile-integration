@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:com="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:QueryMessagesRequest>
+            <mes:Criteria>
+                <!--Zero or more repetitions:-->
+                <mes:Criterion>
+                    <com:Property>?</com:Property>
+                    <com:Value>?</com:Value>
+                    <com:ParseAs>?</com:ParseAs>
+                </mes:Criterion>
+            </mes:Criteria>
+        </mes:QueryMessagesRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

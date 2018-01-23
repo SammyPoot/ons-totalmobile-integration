@@ -1,0 +1,29 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:opt="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseMessages.xsd" xmlns:opt1="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendDeleteJobRequestMessage>
+            <!--Optional:-->
+            <mes:SendMessageRequestInfo>
+                <mes:QueueName>?</mes:QueueName>
+                <!--Optional:-->
+                <mes:CorrelationId>?</mes:CorrelationId>
+                <mes:Key>?</mes:Key>
+            </mes:SendMessageRequestInfo>
+            <!--Optional:-->
+            <mes:DeleteJobRequest>
+                <opt:Identity>
+                    <opt1:Reference>?</opt1:Reference>
+                </opt:Identity>
+                <!--Optional:-->
+                <opt:DeletionReason>?</opt:DeletionReason>
+                <!--Optional:-->
+                <opt:DeletionNotes>?</opt:DeletionNotes>
+                <!--Optional:-->
+                <opt:DeletedBy>
+                    <opt1:Username>?</opt1:Username>
+                    <opt1:Date>?</opt1:Date>
+                </opt:DeletedBy>
+            </mes:DeleteJobRequest>
+        </mes:SendDeleteJobRequestMessage>
+    </soapenv:Body>
+</soapenv:Envelope>

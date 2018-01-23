@@ -1,0 +1,47 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:vis="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsMessages.xsd" xmlns:vis1="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsTypes.xsd" xmlns:com="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendForceRecallVisitRequestMessage>
+            <!--Optional:-->
+            <mes:SendMessageRequestInfo>
+                <mes:QueueName>?</mes:QueueName>
+                <!--Optional:-->
+                <mes:CorrelationId>?</mes:CorrelationId>
+                <mes:Key>?</mes:Key>
+            </mes:SendMessageRequestInfo>
+            <!--Optional:-->
+            <mes:ForceRecallVisitRequest>
+                <vis:Identity>
+                    <!--Optional:-->
+                    <vis1:Guid>?</vis1:Guid>
+                    <vis1:WorkType>?</vis1:WorkType>
+                    <vis1:User>
+                        <!--Optional:-->
+                        <com:Attributes>
+                            <!--Zero or more repetitions:-->
+                            <com:Attribute>
+                                <!--Optional:-->
+                                <com:Name>?</com:Name>
+                                <!--Optional:-->
+                                <com:Value>?</com:Value>
+                            </com:Attribute>
+                        </com:Attributes>
+                        <!--Optional:-->
+                        <com:ID>?</com:ID>
+                        <!--Optional:-->
+                        <com:Name>?</com:Name>
+                        <!--Optional:-->
+                        <com:DeviceID>?</com:DeviceID>
+                    </vis1:User>
+                    <!--Optional:-->
+                    <vis1:Company>?</vis1:Company>
+                    <vis1:Reference>?</vis1:Reference>
+                </vis:Identity>
+                <vis:Lines>
+                    <!--Zero or more repetitions:-->
+                    <vis:Line>?</vis:Line>
+                </vis:Lines>
+            </mes:ForceRecallVisitRequest>
+        </mes:SendForceRecallVisitRequestMessage>
+    </soapenv:Body>
+</soapenv:Envelope>

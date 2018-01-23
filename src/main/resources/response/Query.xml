@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mes:QueryMessagesResponse>
+         <mes:Messages>
+            <!--Zero or more repetitions:-->
+            <mes:Message>
+               <mes:Id>?</mes:Id>
+               <mes:CorrelationId>?</mes:CorrelationId>
+               <mes:TypeName>?</mes:TypeName>
+               <mes:QueueName>?</mes:QueueName>
+               <mes:Key>?</mes:Key>
+               <mes:Date>?</mes:Date>
+               <mes:Status>?</mes:Status>
+               <mes:StatusDate>?</mes:StatusDate>
+               <!--Optional:-->
+               <mes:StatusText>?</mes:StatusText>
+               <!--Optional:-->
+               <mes:BlockedBy>?</mes:BlockedBy>
+            </mes:Message>
+         </mes:Messages>
+      </mes:QueryMessagesResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

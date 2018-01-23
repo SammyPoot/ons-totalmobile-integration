@@ -3,6 +3,8 @@ package com.qa.ons.csv_uploader;
 import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateVisitHeaderRequest;
 import com.consiliumtechnologies.schemas.services.mobile._2009._03.messaging.SendUpdateVisitHeaderRequestMessage;
 import com.consiliumtechnologies.schemas.services.mobile._2009._03.messaging.SendUpdateVisitHeaderRequestMessageResponse;
+import com.qa.ons.totalmobile_stub.MessageQueue;
+
 import org.w3c.dom.Document;
 
 import javax.xml.bind.JAXBContext;
@@ -58,9 +60,11 @@ public class VisitSubmitter {
         soapMessage.saveChanges();
 
         /* Print the request message, just for debugging purposes */
-        System.out.println("Request SOAP Message:");
-        soapMessage.writeTo(System.out);
-        System.out.println("\n");
+        if(MessageQueue.printDebugging) {
+	        System.out.println("Request SOAP Message:");
+	        soapMessage.writeTo(System.out);
+	        System.out.println("\n");
+        }
 
         return soapMessage;
     }
@@ -81,15 +85,17 @@ public class VisitSubmitter {
             SOAPMessage soapResponse = soapConnection.call(message, url);
 
             // Print the SOAP Response
-            System.out.println("Response SOAP Message:");
-            soapResponse.writeTo(System.out);
-            System.out.println();
+            if(MessageQueue.printDebugging) {
+	            System.out.println("Response SOAP Message:");
+	            soapResponse.writeTo(System.out);
+	            System.out.println();
+            }
 
             soapConnection.close();
 
             return soapResponseUnmarshal(soapResponse);
         } catch (Exception e) {
-            System.err.println("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
+            System.err.println("\nError occurred while sending SOAP request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
             e.printStackTrace();
             System.exit(1);
         }

@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendMessageRequest>
+            <mes:QueueName>?</mes:QueueName>
+            <!--Optional:-->
+            <mes:CorrelationId>?</mes:CorrelationId>
+            <mes:Key>?</mes:Key>
+            <mes:Body>?</mes:Body>
+            <mes:TypeName>?</mes:TypeName>
+        </mes:SendMessageRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,5 +1,7 @@
 package com.qa.ons;
 
+import org.xml.sax.SAXException;
+
 import java.io.File;
 
 import org.w3c.dom.Document;
@@ -30,6 +32,6 @@ public class Verifier {
         } catch (JAXBException e) {
             throw e;
         }
-     }
+    }
 }
 

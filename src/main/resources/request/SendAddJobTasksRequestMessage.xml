@@ -1,0 +1,47 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:opt="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseMessages.xsd" xmlns:opt1="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseTypes.xsd" xmlns:vis="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendAddJobTasksRequestMessage>
+            <!--Optional:-->
+            <mes:SendMessageRequestInfo>
+                <mes:QueueName>?</mes:QueueName>
+                <!--Optional:-->
+                <mes:CorrelationId>?</mes:CorrelationId>
+                <mes:Key>?</mes:Key>
+            </mes:SendMessageRequestInfo>
+            <!--Optional:-->
+            <mes:AddJobTasksRequest>
+                <opt:Identity>
+                    <opt1:Reference>?</opt1:Reference>
+                </opt:Identity>
+                <opt:Tasks>
+                    <!--Zero or more repetitions:-->
+                    <vis:Task>
+                        <vis:LineNo>?</vis:LineNo>
+                        <vis:Type>?</vis:Type>
+                        <vis:Description>?</vis:Description>
+                        <!--Optional:-->
+                        <vis:Complete>?</vis:Complete>
+                        <!--Optional:-->
+                        <vis:Notes>?</vis:Notes>
+                        <!--Optional:-->
+                        <vis:Location>?</vis:Location>
+                        <vis:Status>?</vis:Status>
+                        <!--Optional:-->
+                        <vis:AdditionalProperties>
+                            <!--Zero or more repetitions:-->
+                            <vis:AdditionalProperty>
+                                <vis:Name>?</vis:Name>
+                                <vis:Value>?</vis:Value>
+                                <!--Optional:-->
+                                <vis:AdditionalProperties/>
+                            </vis:AdditionalProperty>
+                        </vis:AdditionalProperties>
+                    </vis:Task>
+                </opt:Tasks>
+                <!--Optional:-->
+                <opt:HasPendingTasks>?</opt:HasPendingTasks>
+            </mes:AddJobTasksRequest>
+        </mes:SendAddJobTasksRequestMessage>
+    </soapenv:Body>
+</soapenv:Envelope>

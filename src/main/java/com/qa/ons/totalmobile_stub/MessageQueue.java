@@ -13,7 +13,8 @@ import javax.xml.bind.JAXBElement;
 public class MessageQueue {
     private static final String NAMESPACE_URI = "http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging";
     
-    private static int incrementer = 0;
+    public static int incrementer = 0;
+    public static boolean printDebugging = true;
     
     @Autowired
     public MessageQueue() {
@@ -21,7 +22,11 @@ public class MessageQueue {
 
     public void stub(String messageType) {
     		incrementer++;
-        System.out.println("Found a " + messageType + " number: "+incrementer);
+    		
+//    		Message print out
+    		if(printDebugging) {
+    			System.out.println("Found a " + messageType + " number: "+incrementer);
+    		}
     }
 
     // generated with:
@@ -56,7 +61,7 @@ public class MessageQueue {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "QueryMessageRequest")
     @ResponsePayload
     public JAXBElement<QueryMessagesResponse> queryMessageRequest(@RequestPayload JAXBElement<QueryMessagesRequest> request) {
-        stub("Query");
+        stub("Query.xml");
         QueryMessagesResponse response = new QueryMessagesResponse();
         ObjectFactory objectFactory = new ObjectFactory();
         return objectFactory.createQueryMessagesResponse(response);
@@ -74,7 +79,7 @@ public class MessageQueue {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteMessageRequest")
     @ResponsePayload
     public JAXBElement<DeleteMessageResponse> deleteMessageRequest(@RequestPayload JAXBElement<DeleteMessageRequest> request) {
-        stub("Delete");
+        stub("Delete.xml");
         DeleteMessageResponse response = new DeleteMessageResponse();
         ObjectFactory objectFactory = new ObjectFactory();
         return objectFactory.createDeleteMessageResponse(response);
