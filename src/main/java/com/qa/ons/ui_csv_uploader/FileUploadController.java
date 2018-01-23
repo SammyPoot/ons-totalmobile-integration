@@ -55,6 +55,12 @@ public class FileUploadController {
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
 
+    		if(file.isEmpty()) {
+    			redirectAttributes.addFlashAttribute("message",
+                        "File does not exist!");
+    			return "redirect:/";
+    		}
+    	
         storageService.store(file);
         redirectAttributes.addFlashAttribute("message",
                                              "You successfully uploaded " + file.getOriginalFilename() + "!");
