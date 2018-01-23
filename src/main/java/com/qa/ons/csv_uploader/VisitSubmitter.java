@@ -61,7 +61,7 @@ public class VisitSubmitter {
 
         /* Print the request message, just for debugging purposes */
         if(MessageQueue.printDebugging) {
-	        System.out.println("request SOAP Message:");
+	        System.out.println("Request SOAP Message:");
 	        soapMessage.writeTo(System.out);
 	        System.out.println("\n");
         }
