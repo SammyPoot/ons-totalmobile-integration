@@ -4,7 +4,6 @@ server:
 client:
   default-uri: http://localhost:9090
 
-
 logging:
   level:
     root: WARN

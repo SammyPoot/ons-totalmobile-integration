@@ -1,28 +1,35 @@
 package com.qa.ons;
 
 import java.io.File;
+
+import org.w3c.dom.Document;
+
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
+import javax.xml.transform.Source;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.soap.*;
 
 public class Verifier {
-    public <T> void verify(Class<T> klass) throws Exception {
-        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = sf.newSchema(new File("customer.xsd"));
-
+    public static <T> Object verify(Source source, Class<T> klass) throws Exception {
+        // Create the JAXBContext
         JAXBContext jc = JAXBContext.newInstance(klass);
 
+        // Create the Document
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder db = dbf.newDocumentBuilder();
+        Document document = db.newDocument();
+
+        // Marshal the Object to a Document
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-        unmarshaller.setSchema(schema);
-        // unmarshaller.setEventHandler(new MyValidationEventHandler());
         try {
-            unmarshaller.unmarshal(new File("input.xml"));
-            
+            return unmarshaller.unmarshal(source);
         } catch (JAXBException e) {
-            
+            throw e;
         }
      }
 }
+
