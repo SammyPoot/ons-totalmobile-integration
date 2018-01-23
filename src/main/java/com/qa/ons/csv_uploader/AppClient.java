@@ -8,11 +8,16 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.soap.SOAPException;
 
 import com.consiliumtechnologies.schemas.mobile._2009._03.visitsmessages.UpdateVisitHeaderRequest;
+import com.qa.ons.ui_csv_uploader.Application;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AppClient {
-    public static void main(String[] args) throws JAXBException, javax.xml.parsers.ParserConfigurationException, javax.xml.transform.TransformerConfigurationException, javax.xml.transform.TransformerException, javax.xml.soap.SOAPException, java.io.IOException {
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    public static void main(String[] args) {
         AppClient appClient = new AppClient();
         appClient.run(args[0]);
+        logger.debug("--App Client Started--");
     }
 
     public void run(String arg) {
@@ -21,14 +26,10 @@ public class AppClient {
         for(UpdateVisitHeaderRequest visit: visitHeaderRequests) {
             try {
                 VisitSubmitter.send(visit);
-            } catch (JAXBException e) {
+            } catch (JAXBException | SOAPException | IOException | ParserConfigurationException e) {
+                System.err.println("An error occurred while sending message");
                 e.printStackTrace();
-            } catch (SOAPException e) {
-                e.printStackTrace();
-            } catch (ParserConfigurationException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+
             }
         }
     }

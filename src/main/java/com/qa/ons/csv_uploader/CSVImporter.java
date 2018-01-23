@@ -80,17 +80,15 @@ public class CSVImporter {
     private ArrayList<String[]> operate(String csvFile) {
         File file = new File(csvFile);
         BufferedReader bufferedReader = null;
-        String line = "";
-        ArrayList<String[]> allCSVRows = new ArrayList<String[]>();
+        String line;
+        ArrayList<String[]> allCSVRows = new ArrayList<>();
         try {
             bufferedReader = new BufferedReader(new FileReader(file));
             while ((line = bufferedReader.readLine()) != null) {
                 allCSVRows.add(line.split(",",-1));
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            // TODO better error handling
         } catch (IOException e) {
+            System.err.println("An error occurred while importing CSV");
             e.printStackTrace();
             // TODO better error handling
         } finally {
@@ -98,6 +96,7 @@ public class CSVImporter {
                 try {
                     bufferedReader.close();
                 } catch (IOException e) {
+                    System.err.println("An error occurred while importing CSV");
                     e.printStackTrace();
                     // TODO better error handling
                 }
