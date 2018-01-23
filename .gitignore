@@ -3,12 +3,14 @@ bin/
 .classpath
 .project
 .settings/
+.workbench.xmi
 
 # ignore mac files
 .DS_Store
 
 # ignore idea storage
 .idea/
+ons-totalmobile-integration.iml
 
 # ignore common maven files
 target/
