@@ -59,6 +59,10 @@ public class FileUploadController {
     			redirectAttributes.addFlashAttribute("message",
                         "File does not exist!");
     			return "redirect:/";
+    		}else if(!file.getOriginalFilename().substring(file.getOriginalFilename().length()-3, file.getOriginalFilename().length()).equals("csv")) {
+    			redirectAttributes.addFlashAttribute("message",
+                        "File is not valid .csv format!");
+    			return "redirect:/";
     		}
     	
         storageService.store(file);
