@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:ref="http://schemas.consiliumtechnologies.com/mobile/2013/07/ReferralsMessages.xsd" xmlns:ref1="http://schemas.consiliumtechnologies.com/mobile/2013/07/ReferralsTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendDischargeReferralRequestMessage>
+            <!--Optional:-->
+            <mes:SendMessageRequestInfo>
+                <mes:QueueName>?</mes:QueueName>
+                <!--Optional:-->
+                <mes:CorrelationId>?</mes:CorrelationId>
+                <mes:Key>?</mes:Key>
+            </mes:SendMessageRequestInfo>
+            <!--Optional:-->
+            <mes:DischargeReferralRequest>
+                <ref:Identity>
+                    <!--Optional:-->
+                    <ref1:Reference>?</ref1:Reference>
+                </ref:Identity>
+            </mes:DischargeReferralRequest>
+        </mes:SendDischargeReferralRequestMessage>
+    </soapenv:Body>
+</soapenv:Envelope>

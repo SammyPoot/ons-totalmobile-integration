@@ -1,0 +1,52 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:fol="http://schemas.consiliumtechnologies.com/mobile/2009/04/FolioMessages.xsd" xmlns:com="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendAddFolioContentRequestMessage>
+            <!--Optional:-->
+            <mes:SendMessageRequestInfo>
+                <mes:QueueName>?</mes:QueueName>
+                <!--Optional:-->
+                <mes:CorrelationId>?</mes:CorrelationId>
+                <mes:Key>?</mes:Key>
+            </mes:SendMessageRequestInfo>
+            <!--Optional:-->
+            <mes:AddFolioContentRequest>
+                <!--Optional:-->
+                <fol:Guid>?</fol:Guid>
+                <fol:User>
+                    <!--Optional:-->
+                    <com:Attributes>
+                        <!--Zero or more repetitions:-->
+                        <com:Attribute>
+                            <!--Optional:-->
+                            <com:Name>?</com:Name>
+                            <!--Optional:-->
+                            <com:Value>?</com:Value>
+                        </com:Attribute>
+                    </com:Attributes>
+                    <!--Optional:-->
+                    <com:ID>?</com:ID>
+                    <!--Optional:-->
+                    <com:Name>?</com:Name>
+                    <!--Optional:-->
+                    <com:DeviceID>?</com:DeviceID>
+                </fol:User>
+                <fol:Name>?</fol:Name>
+                <fol:Metadata>
+                    <!--Zero or more repetitions:-->
+                    <com:Item>
+                        <!--Optional:-->
+                        <com:Name>?</com:Name>
+                        <!--Optional:-->
+                        <com:Value>?</com:Value>
+                    </com:Item>
+                </fol:Metadata>
+                <fol:Push>?</fol:Push>
+                <fol:Content>
+                    <com:Content>cid:732895564962</com:Content>
+                    <com:MimeType>?</com:MimeType>
+                </fol:Content>
+            </mes:AddFolioContentRequest>
+        </mes:SendAddFolioContentRequestMessage>
+    </soapenv:Body>
+</soapenv:Envelope>

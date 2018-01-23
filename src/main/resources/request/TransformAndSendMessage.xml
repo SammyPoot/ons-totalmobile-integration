@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:TransformAndSendRequest>
+            <mes:Targets>
+                <!--Zero or more repetitions:-->
+                <mes:Target>
+                    <mes:QueueName>?</mes:QueueName>
+                    <mes:Format>?</mes:Format>
+                </mes:Target>
+            </mes:Targets>
+            <mes:Format>?</mes:Format>
+            <mes:Content>?</mes:Content>
+            <!--Optional:-->
+            <mes:Key>?</mes:Key>
+            <mes:XPath>?</mes:XPath>
+        </mes:TransformAndSendRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

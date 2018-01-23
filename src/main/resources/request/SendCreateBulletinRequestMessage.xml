@@ -1,0 +1,61 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:com="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonMessages.xsd" xmlns:com1="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <mes:SendCreateBulletinRequestMessage>
+            <!--Optional:-->
+            <mes:SendMessageRequestInfo>
+                <mes:QueueName>?</mes:QueueName>
+                <!--Optional:-->
+                <mes:CorrelationId>?</mes:CorrelationId>
+                <mes:Key>?</mes:Key>
+            </mes:SendMessageRequestInfo>
+            <!--Optional:-->
+            <mes:CreateBulletinRequest>
+                <com:Bulletin>
+                    <!--Optional:-->
+                    <com1:Reference>?</com1:Reference>
+                    <!--Optional:-->
+                    <com1:Category>?</com1:Category>
+                    <com1:Subject>?</com1:Subject>
+                    <!--Optional:-->
+                    <com1:Action>?</com1:Action>
+                    <!--Optional:-->
+                    <com1:ActionText>?</com1:ActionText>
+                    <com1:Body>?</com1:Body>
+                    <!--Optional:-->
+                    <com1:Payload>
+                        <!--Zero or more repetitions:-->
+                        <com1:BulletinPayloadItem>
+                            <com1:Name>?</com1:Name>
+                            <!--Optional:-->
+                            <com1:Value>?</com1:Value>
+                            <!--Optional:-->
+                            <com1:Items/>
+                        </com1:BulletinPayloadItem>
+                    </com1:Payload>
+                    <com1:Recipients>
+                        <!--Zero or more repetitions:-->
+                        <com1:User>
+                            <!--Optional:-->
+                            <com1:Attributes>
+                                <!--Zero or more repetitions:-->
+                                <com1:Attribute>
+                                    <!--Optional:-->
+                                    <com1:Name>?</com1:Name>
+                                    <!--Optional:-->
+                                    <com1:Value>?</com1:Value>
+                                </com1:Attribute>
+                            </com1:Attributes>
+                            <!--Optional:-->
+                            <com1:ID>?</com1:ID>
+                            <!--Optional:-->
+                            <com1:Name>?</com1:Name>
+                            <!--Optional:-->
+                            <com1:DeviceID>?</com1:DeviceID>
+                        </com1:User>
+                    </com1:Recipients>
+                </com:Bulletin>
+            </mes:CreateBulletinRequest>
+        </mes:SendCreateBulletinRequestMessage>
+    </soapenv:Body>
+</soapenv:Envelope>
