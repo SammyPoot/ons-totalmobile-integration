@@ -61,7 +61,7 @@ public class VisitSubmitter {
 
         /* Print the request message, just for debugging purposes */
         if(MessageQueue.printDebugging) {
-	        System.out.println("Request SOAP Message:");
+	        System.out.println("request SOAP Message:");
 	        soapMessage.writeTo(System.out);
 	        System.out.println("\n");
         }
@@ -95,7 +95,7 @@ public class VisitSubmitter {
 
             return soapResponseUnmarshal(soapResponse);
         } catch (Exception e) {
-            System.err.println("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
+            System.err.println("\nError occurred while sending SOAP request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
             e.printStackTrace();
             System.exit(1);
         }
