@@ -73,7 +73,7 @@ public class FileUploadController {
         
 
         redirectAttributes.addFlashAttribute("message",
-                                             "You successfully uploaded " + file.getOriginalFilename() + ". " + MessageQueue.incrementer + " SOAP Messages Sent!");
+                                             "You successfully uploaded " + file.getOriginalFilename() + ",\n " + MessageQueue.incrementer + " SOAP Messages Sent & Received!");
 
         return "redirect:/";
     }

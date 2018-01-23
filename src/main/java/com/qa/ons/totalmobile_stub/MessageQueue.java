@@ -14,6 +14,7 @@ public class MessageQueue {
     private static final String NAMESPACE_URI = "http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging";
     
     public static int incrementer = 0;
+    public static boolean printDebugging = true;
     
     @Autowired
     public MessageQueue() {
@@ -23,7 +24,9 @@ public class MessageQueue {
     		incrementer++;
     		
 //    		Message print out
-//        System.out.println("Found a " + messageType + " number: "+incrementer);
+    		if(printDebugging) {
+    			System.out.println("Found a " + messageType + " number: "+incrementer);
+    		}
     }
 
     // generated with:
