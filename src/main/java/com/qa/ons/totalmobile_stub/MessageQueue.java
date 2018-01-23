@@ -61,7 +61,7 @@ public class MessageQueue {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "QueryMessageRequest")
     @ResponsePayload
     public JAXBElement<QueryMessagesResponse> queryMessageRequest(@RequestPayload JAXBElement<QueryMessagesRequest> request) {
-        stub("Query");
+        stub("Query.xml");
         QueryMessagesResponse response = new QueryMessagesResponse();
         ObjectFactory objectFactory = new ObjectFactory();
         return objectFactory.createQueryMessagesResponse(response);
@@ -79,7 +79,7 @@ public class MessageQueue {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteMessageRequest")
     @ResponsePayload
     public JAXBElement<DeleteMessageResponse> deleteMessageRequest(@RequestPayload JAXBElement<DeleteMessageRequest> request) {
-        stub("Delete");
+        stub("Delete.xml");
         DeleteMessageResponse response = new DeleteMessageResponse();
         ObjectFactory objectFactory = new ObjectFactory();
         return objectFactory.createDeleteMessageResponse(response);
