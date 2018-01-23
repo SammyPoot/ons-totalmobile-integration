@@ -7,6 +7,9 @@ bin/
 # ignore mac files
 .DS_Store
 
+# ignore idea storage
+.idea/
+
 # ignore common maven files
 target/
 pom.xml.tag
