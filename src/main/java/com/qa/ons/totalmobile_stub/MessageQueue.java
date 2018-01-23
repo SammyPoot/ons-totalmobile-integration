@@ -13,13 +13,16 @@ import com.consiliumtechnologies.schemas.services.mobile._2009._03.messaging.*;
 @Endpoint
 public class MessageQueue {
     private static final String NAMESPACE_URI = "http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging";
-
+    
+    private static int incrementer = 0;
+    
     @Autowired
     public MessageQueue() {
     }
 
     public void stub(String messageType) {
-        System.out.println("Found a " + messageType);
+    		incrementer++;
+        System.out.println("Found a " + messageType + " number: "+incrementer);
     }
 
     // generated with:
