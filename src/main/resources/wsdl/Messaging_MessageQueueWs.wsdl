@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsMessages.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://schemas.consiliumtechnologies.com/wsdl/mobile/2007/07/messaging" xmlns:s5="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonMessages.xsd" xmlns:s9="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseTypes.xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s6="http://schemas.consiliumtechnologies.com/mobile/2009/04/FolioMessages.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging" xmlns:s3="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsTypes.xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s10="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseMessages.xsd" xmlns:s4="http://schemas.consiliumtechnologies.com/mobile/2009/07/FormsTypes.xsd" xmlns:s7="http://schemas.consiliumtechnologies.com/mobile/2013/07/ReferralsMessages.xsd" xmlns:s1="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd" xmlns:s8="http://schemas.consiliumtechnologies.com/mobile/2013/07/ReferralsTypes.xsd" targetNamespace="http://schemas.consiliumtechnologies.com/wsdl/mobile/2007/07/messaging" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:s2="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsMessages.xsd"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://schemas.consiliumtechnologies.com/wsdl/mobile/2007/07/messaging"
+                  xmlns:s5="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonMessages.xsd"
+                  xmlns:s9="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseTypes.xsd"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:s6="http://schemas.consiliumtechnologies.com/mobile/2009/04/FolioMessages.xsd"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:s0="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging"
+                  xmlns:s3="http://schemas.consiliumtechnologies.com/mobile/2009/03/VisitsTypes.xsd"
+                  xmlns:s10="http://schemas.consiliumtechnologies.com/mobile/2015/05/OptimiseMessages.xsd"
+                  xmlns:s4="http://schemas.consiliumtechnologies.com/mobile/2009/07/FormsTypes.xsd"
+                  xmlns:s7="http://schemas.consiliumtechnologies.com/mobile/2013/07/ReferralsMessages.xsd"
+                  xmlns:s1="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd"
+                  xmlns:s8="http://schemas.consiliumtechnologies.com/mobile/2013/07/ReferralsTypes.xsd"
+                  targetNamespace="http://schemas.consiliumtechnologies.com/wsdl/mobile/2007/07/messaging"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging">
       <s:import namespace="http://schemas.consiliumtechnologies.com/mobile/2009/03/CommonTypes.xsd" />

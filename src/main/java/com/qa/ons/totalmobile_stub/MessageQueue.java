@@ -1,14 +1,13 @@
 package com.qa.ons.totalmobile_stub;
 
-import javax.xml.bind.JAXBElement;
-
+import com.consiliumtechnologies.schemas.services.mobile._2009._03.messaging.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.consiliumtechnologies.schemas.services.mobile._2009._03.messaging.*;
+import javax.xml.bind.JAXBElement;
 
 @Endpoint
 public class MessageQueue {
