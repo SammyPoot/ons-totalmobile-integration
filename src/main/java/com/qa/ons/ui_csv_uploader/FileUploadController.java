@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBui
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.qa.ons.csv_uploader.AppClient;
+import com.qa.ons.totalmobile_stub.MessageQueue;
 
 @Controller
 public class FileUploadController {
@@ -66,11 +67,13 @@ public class FileUploadController {
     		}
     	
         storageService.store(file);
-        redirectAttributes.addFlashAttribute("message",
-                                             "You successfully uploaded " + file.getOriginalFilename() + "!");
 
         AppClient appClient = new AppClient();
         appClient.run(storageService.load(file.getOriginalFilename()).toString());
+        
+
+        redirectAttributes.addFlashAttribute("message",
+                                             "You successfully uploaded " + file.getOriginalFilename() + ". " + MessageQueue.incrementer + " SOAP Messages Sent!");
 
         return "redirect:/";
     }

@@ -13,7 +13,7 @@ import javax.xml.bind.JAXBElement;
 public class MessageQueue {
     private static final String NAMESPACE_URI = "http://schemas.consiliumtechnologies.com/services/mobile/2009/03/messaging";
     
-    private static int incrementer = 0;
+    public static int incrementer = 0;
     
     @Autowired
     public MessageQueue() {
@@ -21,7 +21,9 @@ public class MessageQueue {
 
     public void stub(String messageType) {
     		incrementer++;
-        System.out.println("Found a " + messageType + " number: "+incrementer);
+    		
+//    		Message print out
+//        System.out.println("Found a " + messageType + " number: "+incrementer);
     }
 
     // generated with:

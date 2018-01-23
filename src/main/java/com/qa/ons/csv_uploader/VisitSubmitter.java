@@ -58,9 +58,9 @@ public class VisitSubmitter {
         soapMessage.saveChanges();
 
         /* Print the request message, just for debugging purposes */
-        System.out.println("Request SOAP Message:");
-        soapMessage.writeTo(System.out);
-        System.out.println("\n");
+//        System.out.println("Request SOAP Message:");
+//        soapMessage.writeTo(System.out);
+//        System.out.println("\n");
 
         return soapMessage;
     }
@@ -81,9 +81,9 @@ public class VisitSubmitter {
             SOAPMessage soapResponse = soapConnection.call(message, url);
 
             // Print the SOAP Response
-            System.out.println("Response SOAP Message:");
-            soapResponse.writeTo(System.out);
-            System.out.println();
+//            System.out.println("Response SOAP Message:");
+//            soapResponse.writeTo(System.out);
+//            System.out.println();
 
             soapConnection.close();
 
