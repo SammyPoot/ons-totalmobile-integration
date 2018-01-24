@@ -1,9 +1,13 @@
+# ignore the file upload directory
+upload-dir/*
+
 # ignore common eclipse files
 bin/
 .classpath
 .project
 .settings/
 .workbench.xmi
+workbench.xmi
 
 # ignore mac files
 .DS_Store
